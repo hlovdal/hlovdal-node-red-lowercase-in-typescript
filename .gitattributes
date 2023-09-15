@@ -1,0 +1,16 @@
+# https://www.git-scm.com/docs/gitattributes
+# https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
+
+* text eol=lf
+
+# Enhance diff output
+*.md		text diff=markdown
+*.sh		text diff=bash
+*.css		text diff=css
+*.html		text diff=html
+
+# Inhibit diff output
+package-lock.json text -diff
+
+*.png binary
+
