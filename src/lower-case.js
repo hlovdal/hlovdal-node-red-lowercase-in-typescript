@@ -1,5 +1,5 @@
 
-module.exports = function (RED) {
+export const LowerCaseNodeInitializer = function (RED) {
 	function LowerCaseNode(config) {
 		RED.nodes.createNode(this, config);
 		var node = this;
@@ -10,3 +10,5 @@ module.exports = function (RED) {
 	}
 	RED.nodes.registerType("lower-case", LowerCaseNode);
 };
+
+export default LowerCaseNodeInitializer;

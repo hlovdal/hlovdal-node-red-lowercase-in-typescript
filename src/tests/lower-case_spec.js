@@ -1,7 +1,12 @@
-var should = require("should");
-var helper = require("node-red-node-test-helper");
-var lowerNode = require("../lower-case.js");
+import should from "should";
+import helper from "node-red-node-test-helper";
 
+import { LowerCaseNodeInitializer } from "../lower-case.js";
+
+// https://dev.to/stephencweiss/what-is-require-resolve-and-how-does-it-work-1ho4
+// https://stackoverflow.com/questions/54977743/do-require-resolve-for-es-modules
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
 helper.init(require.resolve("node-red"));
 
 describe("lower-case Node", function () {
@@ -18,7 +23,7 @@ describe("lower-case Node", function () {
 		var flow = [
 			{ id: "n1", type: "lower-case", name: "lower-case" },
 		];
-		helper.load(lowerNode, flow, function () {
+		helper.load(LowerCaseNodeInitializer, flow, function () {
 			var n1 = helper.getNode("n1");
 			try {
 				n1.should.have.property("name", "lower-case");
@@ -39,7 +44,7 @@ describe("lower-case Node", function () {
 			},
 			{ id: "n2", type: "helper" },
 		];
-		helper.load(lowerNode, flow, function () {
+		helper.load(LowerCaseNodeInitializer, flow, function () {
 			var n2 = helper.getNode("n2");
 			var n1 = helper.getNode("n1");
 			n2.on("input", function (msg) {
