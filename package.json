@@ -16,6 +16,11 @@
     "name": "Håkon Løvdal",
     "email": "kode@denkule.no"
   },
+  "node-red": {
+    "nodes": {
+      "lower-case": "src/lower-case.js"
+    }
+  },
   "license": "Apache-2.0",
   "dependencies": {
     "node-red": "^3.1.0"
