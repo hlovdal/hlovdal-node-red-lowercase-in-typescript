@@ -5,7 +5,7 @@
   "description": "The standard Creating your first node lowercase example, but converted to Typescript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha \"src/tests/**/*_spec.js\""
+    "test": "tsc && mocha \"dist/tests/**/*_spec.js\""
   },
   "keywords": [
     "lower-case",
