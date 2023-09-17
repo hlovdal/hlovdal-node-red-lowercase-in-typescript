@@ -1,0 +1,4 @@
+# If this file is not present then npm will use .gitignore which is a
+# problem since it ignores dist/ and npm pack should not ignore that
+# directory. Hence creating this file.
+node_modules/
