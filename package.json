@@ -5,6 +5,7 @@
   "description": "The standard Creating your first node lowercase example, but converted to Typescript",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src",
     "pack": "rimraf dist && tsc && ./pack.sh",
     "test": "rimraf dist && tsc && mocha \"dist/tests/**/*_spec.js\""
   },
@@ -32,6 +33,9 @@
     "@types/node": "^20.6.2",
     "@types/node-red": "^1.3.1",
     "@types/node-red-node-test-helper": "^0.3.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.49.0",
     "mocha": "^10.2.0",
     "node-red-node-test-helper": "^0.3.2",
     "rimraf": "^5.0.5",

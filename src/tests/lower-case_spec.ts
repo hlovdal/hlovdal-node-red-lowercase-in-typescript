@@ -1,3 +1,5 @@
+// Side effects beyond the imported `should` reference, e.g. n1.should.have...
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import should from "should";
 import helper from "node-red-node-test-helper";
 
