@@ -16,5 +16,8 @@
     "name": "Håkon Løvdal",
     "email": "kode@denkule.no"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "node-red": "^3.1.0"
+  }
 }
