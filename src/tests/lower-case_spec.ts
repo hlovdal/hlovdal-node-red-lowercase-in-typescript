@@ -50,7 +50,7 @@ describe("lower-case Node", function () {
 				try {
 					msg.should.have.property(
 						"payload",
-						"uppercase"
+						"uppercase",
 					);
 					done();
 				} catch (err) {

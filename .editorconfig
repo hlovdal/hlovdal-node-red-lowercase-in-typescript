@@ -20,5 +20,9 @@ quote_type = double
 indent_size = 2
 indent_style = space
 
+[.eslintrc.cjs]
+indent_size = 4
+indent_style = space
+
 [*.md]
 max_line_length = off
