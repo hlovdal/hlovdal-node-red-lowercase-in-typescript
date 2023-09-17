@@ -1,12 +1,20 @@
 {
-  "name": "hlovdal-node-red-lowercase-in-typescript",
+  "name": "@hlovdal/node-red-lowercase-in-typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "The standard Creating your first node lowercase example, but converted to Typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "lower-case",
+    "lowercase",
+    "node-red",
+    "typescript"
+  ],
+  "author": {
+    "name": "Håkon Løvdal",
+    "email": "kode@denkule.no"
+  },
+  "license": "Apache-2.0"
 }
