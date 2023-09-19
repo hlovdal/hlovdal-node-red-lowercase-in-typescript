@@ -20,6 +20,7 @@
     "email": "kode@denkule.no"
   },
   "node-red": {
+    "version": ">=3.1.0",
     "nodes": {
       "lower-case": "src/lower-case.js"
     }
