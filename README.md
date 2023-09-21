@@ -1,14 +1,6 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -21,30 +13,17 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Apache 2.0 License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/lowercase.png" alt="Logo" width="734" height="126">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Node-red lowercase node in TypeScript</h3>
 
-  <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript">View Demo</a>
-    ·
-    <a href="https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/issues">Request Feature</a>
-  </p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -73,89 +52,67 @@
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+This is the classical `lower-case` example from the
+[node-red documentation](https://nodered.org/docs/creating-nodes/first-node#creating-a-simple-node) **but converted from Javascript to
+[TypeScript](https://stackoverflow.com/tags/typescript/info)**.
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `hlovdal`, `hlovdal-node-red-lowercase-in-typescript`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+But why Typescript? Many, many reasons, for instance did you know that the
+original code contains a bug in that it assumes unconditionally that `msg`
+contains a `payload` member and that it is always a string? By using Typescript
+the compiler and IDE are able to pick up that and give you an error:
+
+<div align="center">
+    <img src="images/bug.png" alt="Screenshot with compiler error indicator" width="720" height="221">
+</div>
+
+and by fixing that not only does the compiler stop complaining "Hey, the type of
+payload is unknown, you cannot assume it exists or that it is a string", but now
+it also are able to safely provide suggestions on which methods a string
+variable has and you might be interested in using:
+
+<div align="center">
+    <img src="images/no-bug.png" alt="Screenshot with compiler error indicator" width="941" height="268">
+</div>
+
+So while having a lower-case capable node is perhaps by it self not that super
+exciting, the idea is that you should be able to use this project as a
+template/starting point to develop your awesome Node-RED node, *in Typescript*.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![NODE-red][nodered-img]][nodered-url]
+* [![TypeScript][TypeScript-img]][TypeScript-url]
+* [![Node.js][nodejs-img]][nodejs-url]
+* [![NPM][npm-img]][npm-url]
+* [![Git][git-img]][git-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-* npm
-
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-
-   ```sh
-   git clone https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript.git
-   ```
-
-3. Install NPM packages
-
-   ```sh
-   npm install
-   ```
-
-4. Enter your API in `config.js`
-
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+1. Fork this repository.
+2. Make whatever modifications you want.
+3. Run tests.
+4. Profit?
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Notice that as of writing this the pull request to add support for ESM is not
+yet merged.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ROADMAP -->
 ## Roadmap
 
-* [ ] Feature 1
-* [ ] Feature 2
-* [ ] Feature 3
-  * [ ] Nested Feature
+* [ ] Wait for pull request to [support ESM to be merged](https://github.com/node-red/node-red/pull/4355).
+* [ ] Publish on NPM.
 
 See the [open issues](https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -171,28 +128,36 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+While the documentation page does not explicitly say, the
+[repository says Apache 2.0](https://github.com/node-red/node-red.github.io/blob/master/LICENSE). But that covers the lowercase code. When you remove that code to
+replace it with your own code feel free to change the license of your new
+project to something else, including LGPL.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+<div>
+  <p align="center">
+    <a href="https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/issues">Request Feature</a>
+  </p>
+</div>
 
 Project Link: [https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript](https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript)
 
+<!--
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
 * []()
 * []()
 * []()
+-->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -200,30 +165,32 @@ Project Link: [https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescri
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/hlovdal/hlovdal-node-red-lowercase-in-typescript.svg?style=for-the-badge
 [contributors-url]: https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/graphs/contributors
+
 [forks-shield]: https://img.shields.io/github/forks/hlovdal/hlovdal-node-red-lowercase-in-typescript.svg?style=for-the-badge
 [forks-url]: https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/network/members
+
 [stars-shield]: https://img.shields.io/github/stars/hlovdal/hlovdal-node-red-lowercase-in-typescript.svg?style=for-the-badge
 [stars-url]: https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/stargazers
+
 [issues-shield]: https://img.shields.io/github/issues/hlovdal/hlovdal-node-red-lowercase-in-typescript.svg?style=for-the-badge
 [issues-url]: https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/issues
+
 [license-shield]: https://img.shields.io/github/license/hlovdal/hlovdal-node-red-lowercase-in-typescript.svg?style=for-the-badge
 [license-url]: https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com
+
+[git-img]: https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white
+[git-url]: https://www.git-scm.com/
+
+[npm-img]: https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white
+[npm-url]: https://svelte.dev/
+
+[nodejs-img]: https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
+[nodejs-url]: https://laravel.com
+
+[nodered-img]: https://img.shields.io/badge/nodered-8F0000?style=for-the-badge&logo=nodered
+[nodered-url]: https://nodered.org/
+
+[TypeScript-img]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+
+<!-- https://simpleicons.org/?q=typescript -->
