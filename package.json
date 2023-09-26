@@ -33,6 +33,7 @@
     "@types/node-red-node-test-helper": "^0.3.0",
     "mocha": "^10.2.0",
     "node-red-node-test-helper": "^0.3.2",
+    "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
   }
 }
