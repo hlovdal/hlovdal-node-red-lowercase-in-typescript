@@ -13,6 +13,8 @@
     "package.json"
   ],
   "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "lint": "eslint src",
     "build": "rimraf dist && tsc && cpy --flat src/*.html src/*.svg dist/src && npm pack",
     "test": "rimraf dist && tsc && mocha \"dist/tests/**/*_spec.js\""
