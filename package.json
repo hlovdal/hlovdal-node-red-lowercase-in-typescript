@@ -17,7 +17,7 @@
     "cy:run": "cypress run",
     "lint": "eslint src",
     "build": "rimraf dist && tsc && cpy --flat src/*.html src/*.svg dist/src && npm pack",
-    "test": "rimraf dist && tsc && mocha \"dist/tests/**/*_spec.js\""
+    "test": "rimraf dist && tsc && mocha \"dist/src/tests/**/*_spec.js\""
   },
   "keywords": [
     "lower-case",
