@@ -3,10 +3,18 @@
   "type": "commonjs",
   "version": "1.0.0",
   "description": "The standard Creating your first node lowercase example, but converted to Typescript",
-  "main": "index.js",
+  "main": "dist/src/lower-case.js",
+  "files": [
+    "LICENCE",
+    "README.md",
+    "dist/src/file.svg",
+    "dist/src/lower-case.html",
+    "dist/src/lower-case.js",
+    "package.json"
+  ],
   "scripts": {
     "lint": "eslint src",
-    "pack": "rimraf dist && tsc && ./pack.sh",
+    "build": "rimraf dist && tsc && cpy --flat src/*.html src/*.svg dist/src && npm pack",
     "test": "rimraf dist && tsc && mocha \"dist/tests/**/*_spec.js\""
   },
   "keywords": [
@@ -24,7 +32,7 @@
   "node-red": {
     "version": ">=3.1.0",
     "nodes": {
-      "lower-case": "src/lower-case.js"
+      "lower-case": "dist/src/lower-case.js"
     }
   },
   "license": "Apache-2.0",
