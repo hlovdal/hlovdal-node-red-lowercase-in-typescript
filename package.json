@@ -19,6 +19,7 @@
     "name": "Håkon Løvdal",
     "email": "kode@denkule.no"
   },
+  "homepage": "https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript#readme",
   "bugs": "https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/issues",
   "node-red": {
     "version": ">=3.1.0",
