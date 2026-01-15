@@ -37,6 +37,12 @@
   },
   "license": "Apache-2.0",
   "overrides": {
+    "mocha": {
+      "diff": "^8.0.3"
+    },
+    "sinon": {
+      "diff": "^8.0.3"
+    },
     "@node-red/nodes": {
       "body-parser": "^2.2.2"
     }
