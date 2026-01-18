@@ -37,6 +37,9 @@
   },
   "license": "Apache-2.0",
   "overrides": {
+    "@node-red/registry": {
+      "tar": "^7.5.3"
+    },
     "mocha": {
       "diff": "^8.0.3"
     },
