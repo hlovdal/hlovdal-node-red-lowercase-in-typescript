@@ -1,0 +1,69 @@
+[
+    {
+        "id": "46d2912e47208b01",
+        "type": "inject",
+        "z": "10b62b182dcc5f75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "quote",
+        "payload": "Injustice anywhere is a threat to justice everywhere.",
+        "payloadType": "str",
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "abe75792d0204ca0"
+            ]
+        ]
+    },
+    {
+        "id": "033114f53a56cf63",
+        "type": "debug",
+        "z": "10b62b182dcc5f75",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 600,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "abe75792d0204ca0",
+        "type": "lower-case",
+        "z": "10b62b182dcc5f75",
+        "name": "payload",
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "033114f53a56cf63"
+            ]
+        ]
+    },
+    {
+        "id": "310cc384bb8a48d6",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@hlovdal/node-red-lowercase-in-typescript-cjs": "1.0.7"
+        }
+    }
+]

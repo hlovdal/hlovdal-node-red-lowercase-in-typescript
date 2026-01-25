@@ -13,9 +13,15 @@
     "package.json"
   ],
   "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "pree2e": "npm run build && ./bin/upload_file_path_update.sh",
+    "e2e": "concurrently --kill-others -n 'NODE-RED,CYPRESS' -c 'green,blue' \"./bin/run-node-red.sh\" \"wait-on http://localhost:1880 && npm run cy:run\"",
+    "poste2e": "./bin/upload_file_path_clean.sh",
     "lint": "eslint src",
-    "build": "rimraf dist && tsc && cpy --flat src/*.html src/*.svg dist/src && npm pack",
-    "test": "rimraf dist && tsc && mocha \"dist/tests/**/*_spec.js\""
+    "compile": "rimraf dist && tsc",
+    "build": "npm run compile && cpy --flat src/*.html src/*.svg dist/src && npm pack",
+    "test": "npm run compile && mocha \"dist/src/tests/**/*_spec.js\""
   },
   "keywords": [
     "lower-case",
@@ -62,13 +68,16 @@
     "@types/node-red-node-test-helper": "^0.3.5",
     "@typescript-eslint/eslint-plugin": "^8.53.1",
     "@typescript-eslint/parser": "^8.53.1",
+    "concurrently": "^9.2.1",
     "cpy-cli": "^6.0.0",
+    "cypress": "^15.9.0",
     "eslint": "^9.39.2",
     "globals": "^17.1.0",
     "mocha": "^11.7.5",
     "node-red-node-test-helper": "^0.3.6",
     "rimraf": "^6.1.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wait-on": "^9.0.3"
   },
   "engines": {
     "node": ">= 13.2.0"
