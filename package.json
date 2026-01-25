@@ -64,6 +64,7 @@
     "@types/node-red-node-test-helper": "^0.3.5",
     "@typescript-eslint/eslint-plugin": "^8.53.1",
     "@typescript-eslint/parser": "^8.53.1",
+    "concurrently": "^9.2.1",
     "cpy-cli": "^6.0.0",
     "cypress": "^15.9.0",
     "eslint": "^9.39.2",
