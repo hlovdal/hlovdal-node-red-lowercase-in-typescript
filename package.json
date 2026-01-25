@@ -15,6 +15,9 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "pree2e": "npm run build && ./bin/upload_file_path_update.sh",
+    "e2e": "concurrently --kill-others -n 'NODE-RED,CYPRESS' -c 'green,blue' \"./bin/run-node-red.sh\" \"wait-on http://localhost:1880 && npm run cy:run\"",
+    "poste2e": "./bin/upload_file_path_clean.sh",
     "lint": "eslint src",
     "build": "rimraf dist && tsc && cpy --flat src/*.html src/*.svg dist/src && npm pack",
     "test": "rimraf dist && tsc && mocha \"dist/src/tests/**/*_spec.js\""
