@@ -72,7 +72,8 @@
     "mocha": "^11.7.5",
     "node-red-node-test-helper": "^0.3.6",
     "rimraf": "^6.1.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wait-on": "^9.0.3"
   },
   "engines": {
     "node": ">= 13.2.0"
