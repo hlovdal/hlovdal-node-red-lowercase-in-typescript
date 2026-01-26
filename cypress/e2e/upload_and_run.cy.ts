@@ -8,8 +8,13 @@ describe("lower-case node", function () {
 	it("runs imported flow after update", function () {
 		cy.visit("http://localhost:1880/");
 
-		////// Install node
+		////// Find node-red version
 		cy.get("#red-ui-header-button-sidemenu").click();
+		cy.get("#menu-item-node-red-version").invoke("text").as("node_red_version");
+		// cy.get("#red-ui-header-button-sidemenu").click(); // Close menu
+
+		////// Install node
+		// cy.get("#red-ui-header-button-sidemenu").click();
 		cy.get("#menu-item-edit-palette").click();
 		cy.get("a[href^=\"#install\"]").click();
 
@@ -61,7 +66,14 @@ describe("lower-case node", function () {
 		// Using force because a success notification may be covering the button.
 		cy.get("#red-ui-workspace-chart rect[x=\"5\"]").click({ force: true });
 
-		cy.get("#red-ui-tab-debug-link-button").click();
+		////// Verify debug output
+		// V4 has the debug tab as a separate tab, while V5 has it as a button in the sidebar.
+		cy.get("@node_red_version").then(function (node_red_version) {
+			const node_red_version_text = node_red_version + "";
+			if (node_red_version_text.startsWith("v4.")) {
+				cy.get("#red-ui-tab-debug-link-button").click();
+			}
+		});
 		cy.get(".red-ui-debug-msg-object-handle").click();
 		cy.get(".red-ui-debug-msg-object-value").contains(this.quote_flow_lowercase_text);
 	});
