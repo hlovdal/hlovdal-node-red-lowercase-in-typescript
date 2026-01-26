@@ -1,6 +1,6 @@
 {
-  "name": "@hlovdal/node-red-lowercase-in-typescript-cjs",
-  "type": "commonjs",
+  "name": "@hlovdal/node-red-lowercase-in-typescript",
+  "type": "module",
   "version": "1.0.0",
   "description": "The standard Creating your first node lowercase example, but converted to Typescript",
   "main": "dist/src/lower-case.js",
