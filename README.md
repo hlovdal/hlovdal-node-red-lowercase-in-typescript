@@ -124,6 +124,8 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+Notice that `wip/*` branches are work in progress and can be rebased at any time.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## License
