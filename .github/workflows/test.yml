@@ -1,0 +1,30 @@
+name: test
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [ "main", "ghtest" ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [24.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: ./bin/run-lint.sh
+    - run: ./bin/run-test.sh
+    - run: npm run e2e
