@@ -99,15 +99,13 @@ template/starting point to develop your awesome Node-RED node, *in Typescript*.
 3. Run tests.
 4. Profit?
 
-Notice that as of writing this the pull request to add support for ESM is not
-yet merged.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Roadmap
 
-* [ ] Wait for pull request to [support ESM to be merged](https://github.com/node-red/node-red/pull/4355).
-* [ ] Publish on NPM.
+* [ ] Wait for pull request to [support ESM to be merged](https://github.com/node-red/node-red/pull/4355)
+  and then update to ESM.
+* [ ] Publish on NPM (pending esm support).
 
 See the [open issues](https://github.com/hlovdal/hlovdal-node-red-lowercase-in-typescript/issues) for a full list of proposed features (and known issues).
 
