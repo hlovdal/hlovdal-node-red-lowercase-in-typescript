@@ -69,7 +69,7 @@ the compiler and IDE are able to pick up that and give you an error:
 
 and by fixing that not only does the compiler stop complaining "Hey, the type of
 payload is unknown, you cannot assume it exists or that it is a string", but now
-it also are able to safely provide suggestions on which methods a string
+it also is able to safely provide suggestions on which methods a string
 variable has and you might be interested in using:
 
 <div align="center">
