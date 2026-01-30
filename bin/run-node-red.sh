@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-USER_DIR=$(mktemp -d "${TMPDIR:-/tmp/}user-dir.XXXXXXXXXXXX")
+USER_DIR=$(mktemp -d "${TMPDIR:-/tmp}/user-dir.XXXXXXXXXXXX")
 function cleanup {
 	rm -rf "$USER_DIR"
 }
