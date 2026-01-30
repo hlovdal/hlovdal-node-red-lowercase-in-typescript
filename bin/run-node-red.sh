@@ -8,6 +8,26 @@ function cleanup {
 }
 trap cleanup EXIT
 
+# Avoid unbound error, convert not set to empty string
+set +u
+if [[ ! -n $OS ]]
+then
+	OS=""
+fi
+set -u
+
+case "$OS" in
+	Windows_NT)
+		# On Windows the nopt library will translate /tmp/user-dir... to C:\tmp\user-dir...
+		# (instead of C:\Users\...\AppData\Local\Temp\user-dir...) so avoiding that by
+		# translating to dos path before starting node-red. However '\' path separators
+		# are trouble, so translate to '/'.
+		USER_DIR="$(cygpath -w "$USER_DIR" | tr '\\' /)"
+		;;
+	*)
+		;;
+esac
+
 
 #REPO=$HOME/src/github/node-red
 
