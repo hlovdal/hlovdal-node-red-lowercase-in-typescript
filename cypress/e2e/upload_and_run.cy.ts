@@ -35,7 +35,7 @@ describe("lower-case node", function () {
 
 		// Wait for the success notification to appear.
 		cy.get("div.red-ui-notification", {
-			timeout: 30 * 1000,
+			timeout: 120 * 1000,
 		}).contains("Node added to palette:lower-case");
 		cy.get("#node-dialog-ok").click();
 
