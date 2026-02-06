@@ -18,7 +18,7 @@
     "postcy:open": "npm run poste2e",
     "cy:run": "env TERM=${TERM:-vt100} cypress run",
     "pree2e": "npm run build && bash bin/upload_file_path_update.sh",
-    "e2e": "concurrently --kill-others --success first -n 'NODE-RED,CYPRESS' -c 'green,blue' \"bash bin/run-node-red.sh\" \"wait-on http://localhost:1880 && npm run cy:run\"",
+    "e2e": "bash bin/run-e2e.sh",
     "poste2e": "bash bin/upload_file_path_clean.sh",
     "lint": "eslint src",
     "compile": "rimraf dist && tsc",
