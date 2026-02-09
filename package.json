@@ -48,6 +48,9 @@
     "@node-red/registry": {
       "tar": "^7.5.7"
     },
+    "node-red-admin": {
+      "axios": "^1.13.5"
+    },
     "mocha": {
       "diff": "^8.0.3"
     },
