@@ -4,7 +4,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")"/..
 
-if ! grep -q lint package.json
+if grep -q "Error: no test specified" package.json
 then
 	exit 0
 fi
