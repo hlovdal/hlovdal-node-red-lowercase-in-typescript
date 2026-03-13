@@ -7,7 +7,9 @@ on:
     branches: [ "main", "ghtest" ]
 
 jobs:
-  test:
+
+  # https://docs.github.com/en/actions/tutorials/create-an-example-workflow
+  test-os:
 
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
@@ -26,6 +28,28 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: npm ci
+    - run: bash ./bin/run-lint.sh
+    - run: bash ./bin/run-test.sh
+    - run: npm run e2e
+
+  # https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/run-jobs-in-a-container
+  test-container:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    timeout-minutes: 10
+
+    steps:
+    - name: Install git
+      # Needs to be done before the actions/checkout step, otherwise it will fall back to fetching the code over http:
+      # "The repository will be downloaded using the GitHub REST API. To create a local Git repository instead, add Git 2.18 or higher to the PATH"
+      run: dnf install -y git
+    - name: Check out code
+      uses: actions/checkout@v4
+    - name: Avoid dubious ownership error
+      run: chown -R root:root .
+    - name: Install dev dependencies
+      run: bash ./bin/ci-install-dependencies.sh
     - run: npm ci
     - run: bash ./bin/run-lint.sh
     - run: bash ./bin/run-test.sh
