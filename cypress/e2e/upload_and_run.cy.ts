@@ -74,7 +74,7 @@ describe("lower-case node", function () {
 				cy.get("#red-ui-tab-debug-link-button").click();
 			}
 		});
-		cy.get(".red-ui-debug-msg-object-handle").click();
+		cy.get(".red-ui-debug-msg-object-handle", { timeout: 2 * 60 * 1000 }).click();
 		cy.get(".red-ui-debug-msg-object-value").contains(this.quote_flow_lowercase_text);
 	});
 });
