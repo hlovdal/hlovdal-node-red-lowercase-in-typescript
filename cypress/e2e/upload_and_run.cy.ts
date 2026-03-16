@@ -73,8 +73,8 @@ describe("lower-case node", function () {
 			if (node_red_version_text.startsWith("v4.")) {
 				cy.get("#red-ui-tab-debug-link-button").click();
 			}
+			cy.get(".red-ui-debug-msg-object-handle", { timeout: 2 * 60 * 1000 }).click();
+			cy.get(".red-ui-debug-msg-object-value").contains(this.quote_flow_lowercase_text);
 		});
-		cy.get(".red-ui-debug-msg-object-handle", { timeout: 2 * 60 * 1000 }).click();
-		cy.get(".red-ui-debug-msg-object-value").contains(this.quote_flow_lowercase_text);
 	});
 });
