@@ -55,6 +55,12 @@
     "@node-red/registry": {
       "tar": "^7.5.11"
     },
+    "node-red-admin": {
+      "axios": "^1.15.0"
+    },
+    "wait-on": {
+      "axios": "^1.15.0"
+    },
     "@node-red/nodes": {
       "body-parser": "^2.2.2"
     }
