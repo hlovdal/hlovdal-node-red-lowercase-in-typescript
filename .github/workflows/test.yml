@@ -45,7 +45,7 @@ jobs:
       # "The repository will be downloaded using the GitHub REST API. To create a local Git repository instead, add Git 2.18 or higher to the PATH"
       run: dnf install -y git
     - name: Check out code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Avoid dubious ownership error
       run: chown -R root:root .
     - name: Install dev dependencies
