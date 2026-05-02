@@ -86,7 +86,7 @@
     "cpy-cli": "^7.0.0",
     "cypress": "^15.14.1",
     "eslint": "^10.2.1",
-    "globals": "^17.5.0",
+    "globals": "^17.6.0",
     "mocha": "^11.7.5",
     "node-red-node-test-helper": "^0.3.6",
     "rimraf": "^6.1.3",
