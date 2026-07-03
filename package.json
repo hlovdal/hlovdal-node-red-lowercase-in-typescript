@@ -45,28 +45,12 @@
   },
   "license": "Apache-2.0",
   "overrides": {
-    "@cypress/request@3.0.10": {
-      "uuid": "^14.0.1"
-    },
     "mocha": {
       "serialize-javascript": "^7.0.3",
       "diff": "^8.0.3"
     },
     "sinon": {
       "diff": "^8.0.3"
-    },
-    "@node-red/registry": {
-      "tar": "^7.5.11"
-    },
-    "node-red-admin": {
-      "axios": "^1.15.0"
-    },
-    "wait-on": {
-      "axios": "^1.15.0"
-    },
-    "@node-red/nodes@4.1.8": {
-      "uuid": "14.0.0",
-      "body-parser": "^2.2.2"
     }
   },
   "dependencies": {
