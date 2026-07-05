@@ -8,21 +8,21 @@ import { LowerCaseNodeInitializer } from "../lower-case.js";
 
 helper.init(resolve("node-red"));
 
-describe("lower-case Node", function () {
-	beforeEach(function (done) {
+describe("lower-case Node", () => {
+	beforeEach((done) => {
 		helper.startServer(done);
 	});
 
-	afterEach(function (done) {
+	afterEach((done) => {
 		helper.unload();
 		helper.stopServer(done);
 	});
 
-	it("should be loaded", function (done) {
+	it("should be loaded", (done) => {
 		const flow = [
 			{ id: "n1", type: "lower-case", name: "lower-case" },
 		];
-		helper.load(LowerCaseNodeInitializer, flow, function () {
+		helper.load(LowerCaseNodeInitializer, flow, () => {
 			const n1 = helper.getNode("n1");
 			try {
 				n1.should.have.property("name", "lower-case");
@@ -33,7 +33,7 @@ describe("lower-case Node", function () {
 		});
 	});
 
-	it("should make payload lower case", function (done) {
+	it("should make payload lower case", (done) => {
 		const flow = [
 			{
 				id: "n1",
@@ -43,10 +43,10 @@ describe("lower-case Node", function () {
 			},
 			{ id: "n2", type: "helper" },
 		];
-		helper.load(LowerCaseNodeInitializer, flow, function () {
+		helper.load(LowerCaseNodeInitializer, flow, () => {
 			const n2 = helper.getNode("n2");
 			const n1 = helper.getNode("n1");
-			n2.on("input", function (msg) {
+			n2.on("input", (msg) => {
 				try {
 					msg.should.have.property(
 						"payload",
