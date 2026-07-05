@@ -23,7 +23,8 @@
     "lint": "eslint src",
     "compile": "rimraf dist && tsc",
     "build": "npm run compile && cpy --flat src/*.html src/*.svg dist/src && npm pack",
-    "test": "npm run compile && mocha \"dist/src/tests/**/*_spec.js\""
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage --reporter=default --no-file-parallelism"
   },
   "keywords": [
     "lower-case",
@@ -45,10 +46,6 @@
   },
   "license": "Apache-2.0",
   "overrides": {
-    "mocha": {
-      "serialize-javascript": "^7.0.3",
-      "diff": "^8.0.3"
-    },
     "sinon": {
       "diff": "^8.0.3"
     }
@@ -60,21 +57,21 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
-    "@types/mocha": "^10.0.10",
     "@types/node": "^26.1.0",
     "@types/node-red": "^1.3.5",
     "@types/node-red-node-test-helper": "^0.3.5",
     "@typescript-eslint/eslint-plugin": "^8.62.1",
     "@typescript-eslint/parser": "^8.62.1",
+    "@vitest/coverage-v8": "^4.1.9",
     "concurrently": "^10.0.3",
     "cpy-cli": "^7.0.0",
     "cypress": "^15.18.0",
     "eslint": "^10.6.0",
     "globals": "^17.7.0",
-    "mocha": "^11.7.6",
     "node-red-node-test-helper": "^0.3.6",
     "rimraf": "^6.1.3",
     "typescript": "^6.0.3",
+    "vitest": "^4.1.9",
     "wait-on": "^9.0.10"
   },
   "engines": {
