@@ -2,12 +2,9 @@ import {
 	afterEach,
 	beforeEach,
 	describe,
+	expect,
 	it,
 } from "vitest";
-
-// Side effects beyond the imported `should` reference, e.g. n1.should.have...
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import should from "should";
 import {
 	default as helper,
 	TestFlowsItem,
@@ -57,7 +54,7 @@ describe("lower-case Node", () => {
 		helper.load(LowerCaseNodeInitializer, flow, () => {
 			const n1 = helper.getNode("n1");
 			try {
-				n1.should.have.property("name", "lower-case");
+				expect(n1.name).to.equal("lower-case");
 				resolve();
 			} catch (err) {
 				reject(err);
@@ -72,10 +69,7 @@ describe("lower-case Node", () => {
 			const lowerCaseNode = getNodeById(helper, "lowerCaseNode");
 			helperNode.on("input", (msg) => {
 				try {
-					msg.should.have.property(
-						"payload",
-						"uppercase",
-					);
+					expect(msg.payload).to.equal("uppercase");
 					resolve();
 				} catch (err) {
 					reject(err);
