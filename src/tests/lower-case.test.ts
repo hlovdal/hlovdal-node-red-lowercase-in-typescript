@@ -78,4 +78,49 @@ describe("lower-case Node", () => {
 			lowerCaseNode.receive({ payload: "UpperCase" });
 		});
 	}));
+
+	const testData = [
+		{ msg: { payload: 3.14 }, expected: 3.14 },
+		{ msg: { payload: null }, expected: null },
+		{ msg: { payload: { a: "A" } }, expected: { a: "A" } },
+	];
+	testData.forEach((data) => {
+		it(`should pass through messages unchanged when payload is not a string but ${JSON.stringify(data.msg.payload)}`, () => new Promise<void>((resolve, reject) => {
+			const flow = createTestFlow();
+			helper.load(LowerCaseNodeInitializer, flow, () => {
+				const helperNode = getNodeById(helper, "helperNode");
+				const lowerCaseNode = getNodeById(helper, "lowerCaseNode");
+				helperNode.on("input", (msg) => {
+					try {
+						expect(msg.payload).to.toEqual(data.expected);
+						resolve();
+					} catch (err) {
+						reject(err);
+					}
+				});
+				lowerCaseNode.receive(data.msg);
+			});
+
+		}));
+	});
+
+	it("should pass through messages unchanged when it has no payload member", () => new Promise<void>((resolve, reject) => {
+		const flow = createTestFlow();
+		helper.load(LowerCaseNodeInitializer, flow, function () {
+			const helperNode = getNodeById(helper, "helperNode");
+			const lowerCaseNode = getNodeById(helper, "lowerCaseNode");
+			helperNode.on("input", (msg) => {
+				try {
+					// eslint-disable-next-line @typescript-eslint/no-unused-vars
+					const {_msgid, ...msgWithoutId } = msg;
+					expect(msgWithoutId).not.to.have.property("payload");
+					expect(msgWithoutId).toEqual({ foo: "bar" });
+					resolve();
+				} catch (err) {
+					reject(err);
+				}
+			});
+			lowerCaseNode.receive({ foo: "bar" });
+		});
+	}));
 });
