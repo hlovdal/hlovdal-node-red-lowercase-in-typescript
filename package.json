@@ -51,28 +51,28 @@
     }
   },
   "dependencies": {
-    "node-red": "^5.0.7",
-    "uuid": "^14.0.2"
+    "node-red": "^5.0.9",
+    "uuid": "^14.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.7",
     "@eslint/js": "^10.0.1",
-    "@types/node": "^26.5.0",
+    "@types/node": "^26.6.5",
     "@types/node-red": "^1.3.5",
     "@types/node-red-node-test-helper": "^0.3.5",
-    "@typescript-eslint/eslint-plugin": "^8.70.0",
-    "@typescript-eslint/parser": "^8.70.0",
-    "@vitest/coverage-v8": "^5.0.0",
-    "concurrently": "^10.0.5",
+    "@typescript-eslint/eslint-plugin": "^8.72.0",
+    "@typescript-eslint/parser": "^8.72.0",
+    "@vitest/coverage-v8": "^5.0.5",
+    "concurrently": "^10.0.6",
     "cpy-cli": "^7.0.0",
-    "cypress": "^16.0.0",
-    "eslint": "^10.10.0",
-    "globals": "^17.12.0",
+    "cypress": "^16.2.0",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
     "node-red-node-test-helper": "^0.3.6",
     "rimraf": "^6.1.3",
     "typescript": "^6.0.3",
-    "vitest": "^5.0.0",
-    "wait-on": "^9.1.0"
+    "vitest": "^5.0.5",
+    "wait-on": "^9.5.1"
   },
   "engines": {
     "node": ">= 20"
