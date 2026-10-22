@@ -46,6 +46,7 @@
   },
   "license": "Apache-2.0",
   "overrides": {
+    "braces": "npm:@franciscosolis/braces@^3.0.5",
     "sinon": {
       "diff": "^8.0.3"
     }
