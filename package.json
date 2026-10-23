@@ -78,5 +78,8 @@
   },
   "engines": {
     "node": ">= 20"
+  },
+  "allowScripts": {
+    "cypress@16.2.0": true
   }
 }
