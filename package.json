@@ -54,20 +54,20 @@
   "dependencies": {
     "@franciscosolis/braces": "^3.1.1",
     "@vitest/coverage-istanbul": "^5.1.1",
-    "node-red": "^5.0.9",
+    "node-red": "^5.0.10",
     "uuid": "^14.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.7",
     "@eslint/js": "^10.0.1",
-    "@types/node": "^26.6.6",
+    "@types/node": "^26.6.7",
     "@types/node-red": "^1.3.5",
     "@types/node-red-node-test-helper": "^0.3.5",
     "@typescript-eslint/eslint-plugin": "^8.74.0",
     "@typescript-eslint/parser": "^8.74.0",
     "concurrently": "^10.0.7",
     "cpy-cli": "^7.0.0",
-    "cypress": "^16.2.1",
+    "cypress": "^16.3.0",
     "eslint": "^10.15.0",
     "globals": "^17.14.0",
     "node-red-node-test-helper": "^0.3.6",
