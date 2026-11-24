@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "@franciscosolis/braces": "^3.1.1",
-    "@vitest/coverage-istanbul": "^5.1.0",
+    "@vitest/coverage-istanbul": "^5.1.1",
     "node-red": "^5.0.9",
     "uuid": "^14.0.3"
   },
@@ -73,7 +73,7 @@
     "node-red-node-test-helper": "^0.3.6",
     "rimraf": "^6.1.4",
     "typescript": "^6.0.3",
-    "vitest": "^5.1.0",
+    "vitest": "^5.1.1",
     "wait-on": "^9.5.1"
   },
   "engines": {
